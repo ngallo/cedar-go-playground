@@ -8,5 +8,10 @@
       "uid": { "type": "Photo", "id": "VacationPhoto94.jpg" },
       "attrs": {},
       "parents": [{ "type": "Album", "id": "jane_vacation" }]
+    },
+    {
+      "uid": { "type": "Album", "id": "jane_vacation" },
+      "attrs": {},
+      "parents": [{ "type": "Album", "id": "adventure" }]
     }
   ]
