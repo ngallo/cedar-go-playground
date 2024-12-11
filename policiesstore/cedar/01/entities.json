@@ -1,7 +1,7 @@
 [
     {
       "uid": { "type": "User", "id": "Alice" },
-      "attrs": { "age": 18 },
+      "attrs": { "age": 18, "isTerminated": false },
       "parents": []
     },
     {

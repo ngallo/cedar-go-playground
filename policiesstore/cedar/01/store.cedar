@@ -4,4 +4,7 @@ permit (
     resource in Album::"adventure"
 )
 when { principal.age == 18 && 
-    context.demoRequest == true };
+    context.demoRequest == true }
+unless {
+  principal has isTerminated && principal.isTerminated
+};
