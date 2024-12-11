@@ -8,8 +8,6 @@ import (
 	cedar "github.com/cedar-policy/cedar-go"
 )
 
-
-
 func main() {
 	store, err := policiesstore.NewPolicyStore("01")
 	if err != nil {
