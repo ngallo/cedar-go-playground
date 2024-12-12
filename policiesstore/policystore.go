@@ -40,8 +40,9 @@ func NewPolicyStore(storeID string) (*PolicyStore, error) {
 	if err != nil {
 		return nil, err
 	}
-	policyRegex := regexp.MustCompile(`permit\s*\([^;]+;`)
-	codePolicies := policyRegex.FindAllString(string(cedarCode), -1)
+	cedarCodeSanitized := regexp.MustCompile(`//.*`).ReplaceAllString(string(cedarCode), "")
+	policyRegex := regexp.MustCompile(`(?s)@id\(".*?"\)\s*permit\s*\([^;]+;`)
+	codePolicies := policyRegex.FindAllString(cedarCodeSanitized, -1)
 	for i, codePolicy := range codePolicies {
 		policyID := fmt.Sprintf("policy%d", i+1)
 		var policy cedar.Policy

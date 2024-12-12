@@ -1,6 +1,8 @@
-permit (
+// ua ;
+@id("My ID")
+permit ( 
     principal == User::"Alice",
-    action == Action::"view",
+    action == Action::"view", // ciao ;
     resource in Album::"adventure"
 )
 when { principal.age == 18 && 
